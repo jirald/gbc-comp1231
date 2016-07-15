@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 1</title>
+      <meta charset="utf-8">
+      <meta name="description" content="comp1231 labtest 1">
+      <meta name="keywords" content="s6047925,comp1231,labtest1">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h1>Lab Test 1 by: Gerald D. Fangonillo</h1>
+    <div id="gf"></div>
+
+    <script type="text/javascript">
+
+    var num1 = Number(prompt("Enter first number: ",5));
+    var num2 = Number(prompt("Enter second number: ",5));
+    var num3 = Number(prompt("Enter third number: ",5));
+    var sum = num1 + num2 + num3;
+    var max = Math.max(num1,num2,num3);
+
+    if(isNaN(num1 && num2 && num3) || (num1 && num2 && num3) <= 0){
+      alert("You have entered an invalid number(s)");
+    }
+    else if(sum > 10){
+      alert("Sum is Greater than Five");
+      document.getElementById("gf").innerHTML +=
+        "Numbers Entered: " + num1 + "," + num2 + "," + num3 +
+        "<br>Sum:\n" + sum +
+        "<br>Largest Number Entered: " + max;
+    }
+    else if(sum < 10){
+      alert("Sum is Less than Five");
+      document.getElementById("gf").innerHTML +=
+        "Numbers Entered: " + num1 + "," + num2 + "," + num3 +
+        "<br>Sum: " + sum +
+        "<br>Largest Number Entered: " + max;
+    }
+
+    </script>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>
