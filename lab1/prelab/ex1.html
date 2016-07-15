@@ -14,13 +14,13 @@
       var num1 = prompt("Enter first number");
       var num2 = prompt("Enter second number");
 
-      if(isNaN(num1+num2)){
+      if(isNaN(num1 && num2)){
         document.getElementById("ex1").innerHTML = "Please input numbers only";
-      }else if(num1>num2){
+      }else if(num1 > num2){
         document.getElementById("ex1").innerHTML = "The first number is greater than the second";
-      }else if(num1<num2){
+      }else if(num1 < num2){
         document.getElementById("ex1").innerHTML = "The second number is greater than the first";
-      }else if(num1==num2){
+      }else if(num1 == num2){
         document.getElementById("ex1").innerHTML = "The numbers are equal";
       }
       </script>
