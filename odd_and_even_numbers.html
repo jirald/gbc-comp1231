@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 1</title>
+      <meta charset="utf-8">
+      <meta name="description" content="comp1231 labtest 1">
+      <meta name="keywords" content="s6047925,comp1231,labtest1">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h1>Lab Test 1</h1>
+    <div id="lab1">
+    </div>
+
+    <script type="text/javascript">
+
+      var num1 = Number(prompt("Enter First Number: ",0));
+      var num2 = Number(prompt("Enter Second Number: ",0));
+      var num3 = Number(prompt("Enter Third Number: ",0));
+      var num4 = Number(prompt("Enter Fourth Number: ",0));
+      var num5 = Number(prompt("Enter Fifth Number: ",0));
+
+      var result1 = (num1 % 2 == 0) ? 'even' : 'odd';
+      var result2 = (num2 % 2 == 0) ? 'even' : 'odd';
+      var result3 = (num3 % 2 == 0) ? 'even' : 'odd';
+      var result4 = (num4 % 2 == 0) ? 'even' : 'odd';
+      var result5 = (num5 % 2 == 0) ? 'even' : 'odd';
+
+      if(isNaN(num1 && num2 && num3 && num4 && num5))
+        alert("Enter valid numbers only");
+        else
+        document.getElementById("lab1").innerHTML +=
+        "OUTPUT" + "<br>" +
+         num1 + "\nis an\n" + result1 + "\nnumber.<br>" +
+         num2 + "\nis an\n" + result2 + "\nnumber.<br>" +
+         num3 + "\nis an\n" + result3 + "\nnumber.<br>" +
+         num4 + "\nis an\n" + result4 + "\nnumber.<br>" +
+         num5 + "\nis an\n" + result5 + "\nnumber." ;
+
+    </script>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>
