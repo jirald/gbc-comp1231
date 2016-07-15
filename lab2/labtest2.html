@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 2</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 2">
+      <meta name="keywords" content="comp1231,labtest2,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+        <style type="text/css">
+          #container{text-align:center;padding-bottom:35px;margin-left:auto;margin-right:auto;width:500px;height:auto;box-shadow: 0px 1px 3px #000;}
+          table{margin: 10px;margin-left: auto;margin-right: auto;}
+          td{padding: 5px;}
+          .td1{background-color: #99ffcc;}
+          h2{padding: 20px;font-family:serif;font-variant:small-caps;font-weight:lighter}
+          footer{margin-top: 10%;text-align: center;}
+        </style>
+  </head>
+  <body>
+    <div id="container">
+    <h2>Lab Test 2 by:<br>Gerald D. Fangonillo</h2>
+      <div id="s6047925"></div>
+      <script type="text/javascript">
+
+      var cols, rows;
+      //Validate input
+      do{
+        cols = prompt("Enter number of columns: ",3)
+      }while(isNaN(cols) || cols < 3)
+        cols = parseInt(cols)
+
+      do{
+        rows = prompt("Enter number of rows: ",3)
+      }while(isNaN(rows) || rows < 0)
+        rows = parseInt(rows)
+
+      //Table
+      var table = "<table>";
+      for(i = 0; i < rows; i++){
+        table += "<tr>";
+        for(j = 0; j < cols; j++){
+          if(i == 0 || j == 0 || i == rows-1 || j == cols-1)
+          table += "<td class='td1'> * </td>";
+          else
+          table += "<td> * </td>";
+        }
+        table += "</tr>";
+      }
+      table += "</table>";
+
+      //Calculate Area & Perimeter
+      var area = (parseInt(rows)*parseInt(cols));
+      var n = 2;
+      var perimeter = ((parseInt(rows)*n)+(parseInt(cols)*n));
+
+      //Output
+      document.getElementById("s6047925").innerHTML = table+
+      "<br>Area: " +rows+ " x " +cols+ " = " +area+
+      "<br>Perimeter: ( " +rows+ " x " +n+ " ) + ( " +cols+ " x " +n+ " ) = " +perimeter ;
+
+      </script>
+    </div>
+      <footer>
+        <script src="http://my.gblearn.com/js/loadscript.js"></script>
+      </footer>
+    </body>
+</html>

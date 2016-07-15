@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab3 Ex1</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab3 Ex1">
+      <meta name="keywords" content="comp1231,prelab3,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <div id="wrapper">
+    <h2>Prelab3 Ex1</h2>
+      <div id="left" class="sideBars"><h4>Random</h4></div>
+      <div id="right" class="sideBars"><h4>Odd</h4></div>
+      <div id="center" class="sideBars"><h4>Even</h4></div>
+      <script type="text/javascript">
+
+      var arr = [];
+      var even = [];
+      var odd = [];
+      var num = 50;
+
+      for(i = 0; i < num; i++){
+        var val = parseInt(Math.random()*num);
+        arr.push(val);
+        if(val %2 === 0){
+          even.push(arr[i]);
+        }else{
+          odd.push(arr[i]);
+        }
+      }
+
+      var uniqArr = arr.filter(
+        function(value, index, array){
+          return array.indexOf(value) == index;});
+
+      var uniqEven = even.filter(
+        function(value, index, array){
+          return array.indexOf(value) == index;});
+
+      var uniqOdd = odd.filter(
+        function(value, index, array){
+          return array.indexOf(value) == index;});
+
+      var list = "<ul>";
+        document.getElementById("left").innerHTML += "<li>" +uniqArr.join("<li>","</li>");
+
+      uniqEven.sort()
+        document.getElementById("center").innerHTML += "<li>" +uniqEven.join("<li>","</li>");
+
+      uniqOdd.sort();
+        uniqOdd.reverse();
+          document.getElementById("right").innerHTML += "<li>" +uniqOdd.join("<li>","</li>");
+      list += "</ul>";
+    </script>
+      </div>
+      <footer>
+        <script src="http://my.gblearn.com/js/loadscript.js"></script>
+      </footer>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab1 Ex1</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab1 Ex1">
+      <meta name="keywords" content="comp1231,prelab1,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h2>Prelab1 Ex1</h2>
+    <div id="ex1"></div>
+    <script type="text/javascript">
+      var num1 = prompt("Enter first number");
+      var num2 = prompt("Enter second number");
+
+      if(isNaN(num1+num2)){
+        document.getElementById("ex1").innerHTML = "Please input numbers only";
+      }else if(num1>num2){
+        document.getElementById("ex1").innerHTML = "The first number is greater than the second";
+      }else if(num1<num2){
+        document.getElementById("ex1").innerHTML = "The second number is greater than the first";
+      }else if(num1==num2){
+        document.getElementById("ex1").innerHTML = "The numbers are equal";
+      }
+      </script>
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </body>
+</html>

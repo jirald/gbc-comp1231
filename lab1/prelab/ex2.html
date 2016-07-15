@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab1 Ex2</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab1 Ex2">
+      <meta name="keywords" content="comp1231,prelab1,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h2>Prelab1 Ex2</h2>
+    <div id="ex2"></div>
+    <script type="text/javascript">
+      var ave = prompt("Enter Percentage");
+      var marks = "Grade: ";
+      if(ave>=0&&ave<=49){
+        document.getElementById("ex2").innerHTML = marks.concat("F");
+      }else if(ave>=50&&ave<=52){
+        document.getElementById("ex2").innerHTML = marks.concat("D-");
+      }else if(ave>=53&&ave<=56){
+        document.getElementById("ex2").innerHTML = marks.concat("D");
+      }else if(ave>=57&&ave<=59){
+        document.getElementById("ex2").innerHTML = marks.concat("D+");
+      }else if(ave>=60&&ave<=62){
+        document.getElementById("ex2").innerHTML = marks.concat("C-");
+      }else if(ave>=63&&ave<=66){
+        document.getElementById("ex2").innerHTML = marks.concat("C");
+      }else if(ave>=67&&ave<=69){
+        document.getElementById("ex2").innerHTML = marks.concat("C+");
+      }else if(ave>=70&&ave<=72){
+        document.getElementById("ex2").innerHTML = marks.concat("B-");
+      }else if(ave>=73&&ave<=76){
+        document.getElementById("ex2").innerHTML = marks.concat("B");
+      }else if(ave>=77&&ave<=79){
+        document.getElementById("ex2").innerHTML = marks.concat("B+");
+      }else if(ave>=80&&ave<=84){
+        document.getElementById("ex2").innerHTML = marks.concat("A-");
+      }else if(ave>=85&&ave<=89){
+        document.getElementById("ex2").innerHTML = marks.concat("A");
+      }else if(ave>=90&&ave<=100){
+        document.getElementById("ex2").innerHTML = marks.concat("A+");
+      }else if(isNaN(ave)){
+        document.getElementById("ex2").innerHTML = "Please enter a valid number";
+      }else{
+        document.getElementById("ex2").innerHTML = "Please enter a valid percentage value between 0 and 100";
+      }
+      </script>
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 4</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 4">
+      <meta name="keywords" content="comp1231,labtest4">
+      <meta name="author" content="Gerald D. Fangonillo">
+      <style type="text/css">
+      table,th{
+				border: 1px solid;
+			}
+      </style>
+  </head>
+  <body>
+      <h1>Gerald D. Fangonillo - 101047925</h1>
+      <h2>Superheroes</h2>
+      <p id="table"></p>
+      <p id="result"></p>
+
+    <script type="text/javascript">
+    var time;
+    do{
+      time = prompt("Enter race time")
+    }while(isNaN(time) || time < 0)
+      time = time
+
+    var heroes = [];
+
+    var velocity = []
+    for(v = 0; v < 4; v++){
+      velocity.push(parseInt(Math.random()*100)+100)
+    }
+
+    for(i = 0; i < 1; i++){
+    var hero = []
+    hero["name"] = ["Spiderman","Superman","Iron Man","Captain America"]
+
+    hero["distance"] = []
+    hero["distance"][0] = (time * velocity[0])
+    hero["distance"][1] = (time * velocity[1])
+    hero["distance"][2] = (time * velocity[2])
+    hero["distance"][3] = (time * velocity[3])
+      heroes.push(hero)
+    }
+    var min = Math.min(...heroes[0]["distance"])
+    var minHero = heroes[0]["distance"].indexOf(min)
+
+    var table = "<table><tr><th>Hero</th><th>Distance</th></tr>";
+    for(i in heroes){
+        table += "<tr><td>" + heroes[0]["name"].join("<br>") + "</td>" + "<td style='text-align:right'>" + heroes[0]["distance"].join("<br>") + "</td></tr>";
+    }
+    table += "</table>";
+
+    document.getElementById("table").innerHTML = table
+    document.getElementById("result").innerHTML += "<h3>Smallest distance: " + min + " min, Hero: " + heroes[i]["name"][minHero] + "</h3>"
+    </script>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>

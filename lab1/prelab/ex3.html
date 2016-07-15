@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab1 Ex3</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab1 Ex3">
+      <meta name="keywords" content="comp1231,prelab1,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h2>Prelab1 Ex3</h2>
+  <div id="ex3"></div>
+    <script type="text/javascript">
+
+      var letter = "";
+
+      if(letter==letter.toLowerCase())
+      {
+        letter = prompt("Please enter a letter from A to F");
+
+      switch(letter.toLowerCase())
+      {
+        case "a":
+        document.getElementById("ex3").innerHTML = "Excellent";
+        break;
+
+        case "b":
+        document.getElementById("ex3").innerHTML = "Good";
+          break;
+
+        case "c":
+        document.getElementById("ex3").innerHTML = "Adequate";
+          break;
+
+        case "d":
+        document.getElementById("ex3").innerHTML = "Marginal";
+          break;
+
+        case "f":
+        document.getElementById("ex3").innerHTML = "Inadequate";
+          break;
+
+        default:
+        document.getElementById("ex3").innerHTML = "Invalid letter";
+          break;
+        }
+      }
+      </script>
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 4</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 4">
+      <meta name="keywords" content="comp1231,labtest4,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+      <style type="text/css">
+      table{
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-collapse: collapse;
+      }
+      th{
+        text-align: center;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      td{
+        text-align: center;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      </style>
+  </head>
+  <body>
+      <div id="lab4">
+        <h2>Lab Test 4</h2>
+          <h3>Gerald D. Fangonillo - 101047925</h3>
+          </div>
+
+      <script type="text/javascript">
+
+      var print = document.getElementById("lab4");
+      //Main array
+      var guests = [];
+
+      //Building associative array
+      for(i = 0; i < 9; i++){
+        var guest = [];
+        guest["gender"] = (parseInt(Math.random()*2))
+        guest["age"] = (parseInt(Math.random()*101))
+
+        if(guest["gender"] == 0)
+          guest["gender"] = "Male"
+          else
+          guest["gender"] = "Female"
+          guests.push(guest)
+      }
+
+      //Display the Table
+      var table = "<table>";
+      print.innerHTML += table + "<th>Guest</th><th>Gender</th><th>Age</th>";
+
+        for(i in guests){
+          print.innerHTML +=  table + "<tr><td>" + i + "</td><td>" + guests[i]["gender"] + "</td><td>" + guests[i]["age"] + "</td></tr>"
+        }
+        print.innerHTML += "</table>"
+
+        //Randomly pick a winner
+        guests["randNum"] = (parseInt(Math.random()*guests.length))
+        print.innerHTML += "<br>Guest number " + guests["randNum"] + ", " + guests[guests["randNum"]]["gender"] + " " + guests[guests["randNum"]]["age"] + " years of age is our winner."
+
+      </script>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>

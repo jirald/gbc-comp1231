@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab4</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab4">
+      <meta name="keywords" content="comp1231,prelab4,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+      <style type="text/css">
+      table{
+        border: 1px solid;
+        border-collapse: collapse;
+      }
+      th{
+        text-align: center;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      td{
+        text-align: center;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="Bugs on a wire">
+        <h2>Prelab 4</h2>
+          <p>Gerald D. Fangonillo 101047925</p>
+      </div>
+
+      <script type="text/javascript">
+
+        var print = document.getElementById('Bugs on a wire')
+
+        do{
+          wire = prompt("Enter length for the wire");
+        }while(isNaN(wire) || wire < 1)
+          wire = wire
+
+        var bugs = [];
+
+        for(i = 0; i < 6; i++){
+          var bug = [];
+          bug["xcoord"] = parseInt(Math.random()*wire);
+          if(Math.random() <= 0.3)
+            bug["type"] = "Spider"
+            else
+            bug["type"] = "Roach"
+            bugs.push(bug)
+        }
+
+        var table = "<table>"
+        print.innerHTML += table + "<th>Type</th><th>x-Coordinate</th>"
+        for(i in bugs){
+          print.innerHTML += table + "<tr><td>" +  bugs[i]["type"] + "</td><td>" + bugs[i]["xcoord"] + "</td></tr>";
+        }
+        print.innerHTML += table + "</table>";
+
+        var min = bugs[0]["xcoord"]
+        var minType = bugs[0]["type"]
+
+        var spider = roach = 0;
+
+        for(i in bugs){
+          if(bugs[i]["type"] == "Spider")
+            spider++
+            else
+            roach++
+
+          if(bugs[i]["xcoord"] < min){
+            min = bugs[i]["xcoord"]
+            minType = bugs[i]["type"]
+          }
+        }
+
+        print.innerHTML += "<br>Min: " + min + ", Type: " + minType +
+        "<br>Roaches: " + roach + ", Spiders: " + spider
+
+      </script>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>

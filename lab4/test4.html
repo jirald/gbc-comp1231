@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 4</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 4">
+      <meta name="keywords" content="comp1231,labtest4,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+      <style type="text/css">
+      table{
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-collapse: collapse;
+      }
+      th{
+        text-align: center;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      td{
+        text-align: center;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        width: 100px;
+        border-collapse: collapse;
+      }
+      </style>
+  </head>
+  <body>
+      <div id="lab4">
+        <h2>Lab Test 4</h2>
+          <h3>Gerald D. Fangonillo - 101047925</h3>
+          </div>
+
+      <script type="text/javascript">
+
+      var print = document.getElementById("lab4");
+      var students = [];
+
+      for(i = 0; i < 10; i++){
+        var student = [];
+        student["id"] = "1010" + (parseInt(Math.random() * 9000) + 1000);
+        student["mark"] = parseInt(Math.random() * 101)
+        students.push(student)
+      }
+
+      var pass = 0;
+      var table = "<table>";
+      print.innerHTML += table + "<th>Student ID</th><th>Mark</th>"
+
+        for(i in students){
+          print.innerHTML += table + "<tr><td>" + students[i]["id"] + "</td><td>" + students[i]["mark"] + "</td></tr>";
+          if(students[i]["mark"] >= 50)
+          pass++
+        }
+        
+        print.innerHTML += table + "</table>"
+        print.innerHTML += "<br>" + pass + " students passed this test"
+
+      </script>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>

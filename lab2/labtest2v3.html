@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 2</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 2">
+      <meta name="keywords" content="comp1231,labtest2,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+        <style type="text/css">
+        body{background-color:#f2f2f2}
+        h2{font-family:serif;font-variant:small-caps;font-weight:lighter;text-align:center}
+        #container{margin-top:10%;margin-left:auto;margin-right:auto;padding:50px;width:300px;height:auto;box-shadow: 0px 1px 3px #000;}
+        footer{text-align:center;margin-top:50px}
+        </style>
+  </head>
+  <body>
+    <div id="container">
+    <h2>Lab Test 2<br>Gerald D. Fangonillo</h2>
+      <div id="s6047925"></div>
+      <script type="text/javascript">
+      var input,i;
+      var num = [];
+      do{
+        input = prompt("Please enter a number between 30 and 100");
+      }
+      while(isNaN(input) || input < 30 || input > 100)
+        input = parseInt(input)
+
+      for(i = 0; i < input; i++)
+          num.push(i)
+          var print = document.getElementById("s6047925");
+          for(i in num){
+            if(i % 10 == 0)
+              print.innerHTML += "<br>" ;
+              else
+              print.innerHTML += " . " ;
+            if(i < 10)
+              print.innerHTML += 0 + i ;
+              else
+              print.innerHTML += i ;
+            if(i == Math.max(...num) && i < 99)
+              print.innerHTML += num.slice(Math.max(num.length - 1, 99)) + " . " ;
+              }
+      </script>
+    </div>
+    <footer>
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </footer>
+  </body>
+</html>

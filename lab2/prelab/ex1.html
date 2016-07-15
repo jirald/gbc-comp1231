@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab2 Ex1</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab2 Ex1">
+      <meta name="keywords" content="comp1231,prelab2,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h2>Prelab2 Ex1</h2>
+    <div id="ex1"></div>
+    <script type="text/javascript">
+      var entries = Number(prompt("How many list items would you like?"));
+
+      if(isNaN(entries) || entries < 0)
+        alert("Please enter a valid and positive numbers");
+
+      var list = "<ul>"
+      var i;
+
+      for(i=1; i<=entries;){
+        document.getElementById("ex1").innerHTML += "<li>" +[i]+ "</li>";
+        i++
+      }
+      entries + entries + "</ul>"
+    </script>
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </body>
+</html>

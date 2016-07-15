@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prelab4 Ex3</title>
+	<meta name='description' content='Prelab 4'>
+	<meta name='keywords' content='prelab, javascript, comp1231'>
+	<meta name ='author' content='Jonathon Orsi - jonathon.orsi@gmail.com'>
+	<style>
+	#col1, #col2 {
+		display: inline-block;
+		float: left;
+		clear: none;
+		padding: 15px;
+        max-width: 250px;
+	}
+	</style>
+</head>
+<body>
+	<h1>Prelab4 Ex3</h1>
+
+	<script > //<!--[CDATA[
+	document.write ("<a href='http://validator.w3.org/check?uri=" +
+	location.href+ "\;ss=1;verbose=1' target='display'>" +
+	"<img src='http://gblearn.com/courses/wp-content/uploads/2014/01/HTML5_Logo_2561.png' " +
+	"width='50' height='50' border='0' " +
+	"alt='Valid HTML5.' " +
+	"title='Valid HTML5' /></a>")
+	dt=new Date(document.lastModified);
+	document.write("<small>This page was last modified on " +
+	dt.toLocaleString() + "</small>")
+	//]]--></script>
+	<br>
+
+	<div id="col1">...</div>
+	<div id="col2">...</div>
+	<script>
+        var input = prompt("Please input an integer");
+        input = parseInt(input);
+        if(isNaN(input) || input < 1)
+            input = 100;
+
+        //Create and fill numbers array from users input
+        var numbers = new Array(input);
+		for(var i = 0; i < numbers.length; i++) {
+			numbers[i] = parseInt(Math.random() * 21);
+		}
+
+        //Setup variables to calculate mode, median, and mean
+        var numbers_sort = new Array(numbers.length);
+        var numbers_avg = 0;
+        var numbers_counter = new Array(21);
+        for(var i = 0; i < numbers_counter.length; i++) {
+            numbers_counter[i] = 0;
+        }
+        for(var i in numbers) {
+            numbers_counter[numbers[i]]++;
+            numbers_avg += numbers[i];
+            numbers_sort[i] = numbers[i];
+        }
+
+        //Calculate mode
+        var maxNum = 0;
+        var modes = [];
+        for(var i in numbers_counter) {
+            if(numbers_counter[i] > maxNum)
+                maxNum = numbers_counter[i];
+        }
+        for(var i in numbers_counter) {
+            if(numbers_counter[i] == maxNum)
+                modes.push(i);
+        }
+
+        //Calculate median
+        numbers_sort.sort(function(a, b){return a-b});
+        var nsMidIndex = parseInt(numbers_sort.length / 2);
+
+        //Mode, Median, and Mean for original numbers array
+        var numbers_mode = modes;
+        var numbers_median = numbers_sort[nsMidIndex];
+        var numbers_mean = numbers_avg / numbers.length;
+
+		document.getElementById("col1").innerHTML = "<strong>Array</strong><br><ul><li>" + numbers.join("</li><li>") + "</li></ul>";
+		document.getElementById("col2").innerHTML = "<strong>Mode</strong>: " + numbers_mode.join(", ") + "<br>"
+                                                  + "<strong>Median</strong>: " + numbers_median + "<br>"
+                                                  + "<strong>Mean</strong>: " + numbers_mean;
+
+        //Change the background colour of all the Modes in the array
+        var listElements = document.getElementById("col1").getElementsByTagName("li");
+
+		for(var i in listElements) {
+			if(numbers_mode.indexOf(listElements[i].innerHTML) > -1) {
+                var hex = listElements[i].innerHTML;
+                if(listElements[i].innerHTML < 10) listElements[i].style.backgroundColor = "#A" + hex + "9" + hex + hex + "D";
+                else listElements[i].style.backgroundColor = "#A" + hex + "A" + hex;
+			}
+		}
+	</script>
+
+</body>
+</html>

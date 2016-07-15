@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="comp1231 Lab Test 3">
+    <meta name="keywords" content="comp1231,labtest3,gblearn">
+    <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <div id="container">
+      <h2>Lab Test 3</h2>
+    <div id="lab3"></div>
+    <script>
+      var output = document.getElementById("lab3");
+      var num = [];
+      num.sort(function(b, a){return b-a});
+
+      for(i = 0; i <= 20; i++){
+        num.push(parseInt(Math.random()*100))
+      }
+
+      num.sort(function(b, a){return b-a});
+        output.innerHTML +=
+          num + "<br><br>" +
+          num.slice(10)
+
+      var result = [];
+      for(i = 0; i < num.length; i += 3){
+        result.push(num[i])
+      }
+
+      output.innerHTML +=
+        "<br><br>" + result.join("<br>")
+
+    </script>
+  </div>
+  <footer>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </footer>
+  </body>
+</html>

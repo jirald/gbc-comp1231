@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Prelab2 Ex2</title>
+    <link href="style.css" rel="stylesheet" type="text/javascript">
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Prelab2 Ex2">
+      <meta name="keywords" content="comp1231,prelab2,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+  </head>
+  <body>
+    <h2>Prelab2 Ex2</h2>
+    <div id="ex2"></div>
+
+    <script>
+    var rows = prompt("Number of Rows: ");
+    var cols = prompt("Number of Columns: ");
+
+    var table = "<table>";
+        for(i = 1; i <= rows; i++){
+          table = table + "<tr>";
+
+          for(j=1; j<= cols; j++){
+            table = table + "<td>" +i*j+ "</td>";
+          }
+          table = table + "</tr>";
+        }
+        table = table + "</table>";
+        document.getElementById("ex2").innerHTML = table;
+        </script>
+
+      <script src="http://my.gblearn.com/js/loadscript.js"></script>
+    </body>
+</html>

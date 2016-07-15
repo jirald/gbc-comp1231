@@ -1,0 +1,96 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title>Prelab3 Ex2</title> 
+	<meta charset="utf-8"> 
+	<meta name="description" content="Pre-lab 3 Ex2 for Comp1231"> 
+	<meta name="keywords" content="prelab3,comp1231,benedict"> 
+	<meta name="author" content="Benedict Angeles">
+	<style>
+		div {
+			overflow: auto;
+			}
+		#Column1, #Column2 {
+			display: inline-block;
+			float: left;
+			padding: 150px;
+			overflow:auto;
+			}
+		
+		#Column2 {
+			margin-top: 15px;
+			margin-left: 25px;
+			}
+		
+	</style>
+</head>
+
+<body>
+	<h1>Prelab3 Ex2</h1>
+	
+	<div id="Column1">ARRAY VALUES</div>
+	<div id="Column2">ARRAY STATISTICS</div>
+	<script>
+		var n=50;
+		var ArrayLength = prompt("Please enter the number of ELEMENTS in your ARRAY:");
+		if(ArrayLength < 1 || isNaN(ArrayLength)) {
+			ArrayLength = 50;
+		}
+		var Numbers1 = new Array(parseInt(ArrayLength));
+		for(var i = 0; i < Numbers1.length; i++) {
+			Numbers1[i] = parseInt(Math.random() * n);
+		}
+		
+		var SmallestNumber = Numbers1[0];
+		var LargestNumber = Numbers1[0];
+		var SumOfNumbers = 0;
+		var OddNumbers = 0;
+		var EvenNumbers = 0;
+		var list1 = "<ul>";		
+		for(var i = 0; i < Numbers1.length; i++) {
+			
+			list1 += "<li>" + Numbers1[i] + "</li>";
+			
+			if(Numbers1[i] < SmallestNumber) {
+				SmallestNumber = Numbers1[i];
+			}
+			if(Numbers1[i] > LargestNumber) {
+				LargestNumber = Numbers1[i];
+			}
+			if(Numbers1[i] % 2 != 0) {
+				OddNumbers += Numbers1[i];
+			}
+			if(Numbers1[i] % 2 == 0) {
+				EvenNumbers += Numbers1[i];
+			}
+			
+			SumOfNumbers += Numbers1[i];
+		}
+		list1 += "</ul>";
+		
+		
+		var list2 = "Smallest number: " + SmallestNumber + "<br>"
+					+ "Largest number: " + LargestNumber + "<br>"
+					+ "Sum of all the Values: " + SumOfNumbers + "<br>"
+					+ "Odd Values in the Array: " + OddNumbers + "<br>"
+					+ "Even Values in the Array: " + EvenNumbers;
+		
+	
+		document.getElementById("Column1").innerHTML = list1;
+		document.getElementById("Column2").innerHTML = list2;
+		
+	
+		var listElements = document.getElementById("Column1").getElementsByTagName("li");
+		
+		for(var i = 0; i < listElements.length; i++) {
+			if(listElements[i].innerHTML == SmallestNumber) {
+				listElements[i].style.backgroundColor = "#00FFFF";
+			}
+			if(listElements[i].innerHTML == LargestNumber) {
+				listElements[i].style.backgroundColor = "#00FF00";
+			}
+		}
+	</script>
+	
+</body>
+</html>
