@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Lab Test 5</title>
+      <meta charset="utf-8">
+      <meta name="description" content="COMP1231 Lab Test 5">
+      <meta name="keywords" content="comp1231,labtest5,s6047925">
+      <meta name="author" content="Gerald D. Fangonillo">
+      <style>
+      #numbersDiv{
+        float: left;
+        text-indent: 20px;
+        background-color: #b3d9ff;
+        width: 40%;
+      }
+      #otherDiv{
+        float: left;
+        text-indent: 20px;
+        background-color: #bfbfbf;
+        width: 40%;
+      }
+      </style>
+  </head>
+  <body>
+    <aside id="numbersDiv"></aside>
+    <aside id="otherDiv"></aside>
+    <div id="output"></div>
+
+    <script type="text/javascript">
+
+    function doSomething(myStr){
+      var myStr = prompt("Please enter something")
+      var result;
+      var numbers = []
+      var other = []
+      for(i = 0; i < myStr.length; i++){
+        result = myStr.charAt(i)
+        for(j = 0; j < result.length; j++){
+          if(!isNaN(result[j]))
+          numbers.push(result[j])
+          else
+          other.push(result[j])
+        }
+      }
+      var count = 0;
+      for(i in numbers){
+        if(numbers[i])
+        count++
+      }
+      document.getElementById("numbersDiv").innerHTML += numbers.join("")
+      document.getElementById("otherDiv").innerHTML += other.join("")
+      document.getElementById("output").innerHTML += "<br><br><br>" + count + "\nwere found in this string."
+    }
+    doSomething()
+
+    </script>
+    <br><br>
+    <script src="http://my.gblearn.com/js/loadscript.js"></script>
+  </body>
+</html>
